@@ -1,27 +1,90 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+*{
+  box-sizing: border-box;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: black;
+  overflow-x: hidden;
+}
+.chat-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  background-color: #ffffff;
+  position: absolute;
+  width: 100%;
+  bottom:0;
+}
+
+.top-footer, .bottom-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-heading {
+  color:#ffffff;
+  text-align: center;
+}
+
+.chat-holder {
+  background:#ffffff;
+  width:350px;
+  height:60vh;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0px 0px 28px #ffffff;
+}
+
+.chat-form {
+  position: absolute;
+  width: 100%;
+  bottom:0;
+}
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-textarea {
+  width: 100%;
+  border: none;
+  font-size: 18px;
+  font-family: sans-serif;
+  border-radius: 10px;
+  padding:10px;
+}
+.form-textarea:focus {
+   outline: none;
+}
+[data-author="other"]{
+  display: block;
+  text-align: left;
+  padding:5px 10px 5px 10px;
+  width:50%;
+  background: #a0ffd0;
+  border-radius: 0px 10px 10px 0px;
+}
+[data-author="me"]{
+  display: block;
+  text-align: right;
+  padding:5px 10px 5px 10px;
+  width:50%;
+  background: #b9faff;
+  border-radius: 10px 0px 0px 10px;
+  
+}
+.message-div-other {
+  display: flex;
+  justify-content: left;
+  margin-top: 3px;
+}
+.message-div-me {
+  display: flex;
+  justify-content: right;
+  margin-top: 3px;
 }
