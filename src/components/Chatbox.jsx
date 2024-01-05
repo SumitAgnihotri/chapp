@@ -39,7 +39,7 @@ export default function ChatBox() {
 
     const messages = receivedMessages.map((message, index) => {
         const author = message.connectionId === ably.connection.id ? "me" : "other";
-        return <div className={`message-div-${author}`}><span key={index} className="chat-messages" data-author={author}>{message.data}</span></div>;
+        return <div key={index} className={`message-div-${author}`}><span className="chat-messages" data-author={author}>{message.data}</span></div>;
     });
 
     useEffect(() => {
