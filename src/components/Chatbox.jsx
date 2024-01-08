@@ -2,6 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useChannel } from "ably/react";
 
 export default function ChatBox() {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth() + 1; // Months are zero-based
+    const day = currentDate.getDate();
+    const hours = currentDate.getHours();
+    const minutes = currentDate.getMinutes();
+    const seconds = currentDate.getSeconds();
+    console.log(`${year}-${month}-${day} ${hours}:${minutes}:${seconds}`);
 
     let inputBox = null;
     let messageEnd = null;
