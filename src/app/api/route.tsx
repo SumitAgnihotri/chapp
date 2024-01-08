@@ -9,6 +9,6 @@ export async function GET(_request: any) {
             clientId: '7W4bHg',
             nonce:_request.rand_number,
         };
-    let tokenRequestData = await client.auth.createTokenRequest(tokenParams);
-    return Response.json(tokenRequestData);
+    // let tokenRequestData = await client.auth.createTokenRequest(tokenParams);
+    return Response.json(_request);
 };
