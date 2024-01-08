@@ -9,6 +9,7 @@ export default function ChatBox() {
     const hours = currentDate.getHours();
     const minutes = currentDate.getMinutes();
     const seconds = currentDate.getSeconds();
+    console.log("testing");
     console.log(`${year}-${month}-${day} ${hours}:${minutes}:${seconds}`);
 
     let inputBox = null;
