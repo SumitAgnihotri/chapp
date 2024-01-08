@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useChannel } from "ably/react";
+import crypto from 'crypto'
 
 export default function ChatBox() {
     let inputBox = null;
@@ -14,7 +15,9 @@ export default function ChatBox() {
     });
 
     const sendChatMessage = (messageText) => {
-        channel.publish({ name: "chat-message", data: messageText });
+        // Generate a random nonce
+        const  buffer = crypto.randomBytes(Math.ceil(20 / 2));
+        channel.publish({ name: "chat-message", data: messageText , random_number:buffer.toString('hex').slice(0, 20)+"sumitagnihotri"});
         setMessageText("");
         inputBox.focus();
     }
