@@ -6,6 +6,17 @@ const Chat = dynamic(() => import('../components/Chat'), {
 })
 
 export default function Home() {
+
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth() + 1; // Months are zero-based
+  const day = currentDate.getDate();
+  const hours = currentDate.getHours();
+  const minutes = currentDate.getMinutes();
+  const seconds = currentDate.getSeconds();
+  console.log("testing");
+  console.log(`${year}-${month}-${day} ${hours}:${minutes}:${seconds}`);
+  
   return (
     <div className="container">
       <div className="chat-wrapper">
