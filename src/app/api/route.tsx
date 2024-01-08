@@ -3,6 +3,7 @@ import crypto from 'crypto'
 
 let options: Ably.Types.ClientOptions = { key: process.env.ABLY_API_KEY };
 export async function GET(_request: any) {
+    console.log(_request+"testing");
     const client = new Ably.Realtime(options);
         // Generate a random nonce
         const buffer = crypto.randomBytes(Math.ceil(20 / 2));
