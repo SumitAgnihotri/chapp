@@ -10,7 +10,7 @@ export async function GET(_request: any) {
         // Set up token parameters including the nonce
         const tokenParams: Ably.Types.TokenParams = {
             clientId: '7W4bHg',
-            nonce: buffer.toString('hex').slice(0, 20),
+            nonce: buffer.toString('hex').slice(0, 20)+"sumitagnihotri",
         };
     let tokenRequestData = await client.auth.createTokenRequest(tokenParams);
     return Response.json(tokenRequestData);
